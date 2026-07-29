@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -62,7 +63,7 @@
 
     <!-- ヘッダー（戻るボタン ＆ 単元タイトル） -->
     <header class="w-full max-w-md md:max-w-2xl bg-white rounded-2xl p-4 mb-4 card-shadow border border-slate-200 flex items-center justify-between">
-        <a href="https://tktora-tigers.github.io/kaifuku-home/" class="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition">
+        <a href="index.html" class="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition">
             <i class="fa-solid fa-chevron-left"></i>
             <span><ruby>一覧<rt>いちらん</rt></ruby>へ</span>
         </a>
@@ -150,7 +151,12 @@
             <button onclick="restartQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs md:text-sm flex items-center justify-center gap-2 transition shadow-md active:scale-95">
                 <i class="fa-solid fa-rotate-right"></i>
                 <span>もう<ruby>一度<rt>いちど</rt></ruby><ruby>挑戦<rt>ちょうせん</rt></ruby>する</span>
-      </div>
+            </button>
+            <a href="index.html" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl text-xs md:text-sm border border-slate-300 transition">
+                <ruby>単元一覧<rt>たんげんいちらん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>る
+            </a>
+        </div>
+    </div>
 
     <!-- フッター -->
     <footer class="w-full text-center text-slate-400 text-[11px] py-2 mt-auto">
