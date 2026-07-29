@@ -62,7 +62,7 @@
 
     <!-- ヘッダー（戻るボタン ＆ 単元タイトル） -->
     <header class="w-full max-w-md md:max-w-2xl bg-white rounded-2xl p-4 mb-4 card-shadow border border-slate-200 flex items-center justify-between">
-        <a href="https://tktora-tigers.github.io/kaifuku-home/" class="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition">
+        <a href="index.html" class="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition">
             <i class="fa-solid fa-chevron-left"></i>
             <span><ruby>一覧<rt>いちらん</rt></ruby>へ</span>
         </a>
@@ -146,26 +146,24 @@
         </div>
 
         <!-- アクションボタン -->
-<div class="space-y-3">
-    <button onclick="restartQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs md:text-sm flex items-center justify-center gap-2 transition shadow-md active:scale-95">
-        <i class="fa-solid fa-rotate-right"></i>
-        <span>もう<ruby>一度<rt>いちど</rt></ruby><ruby>挑戦<rt>ちょうせん</rt></ruby>する</span>
-    </button>
-    <a href="https://tktora-tigers.github.io/kaifuku-home/" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 text-center rounded-2xl text-xs md:text-sm border border-slate-300 transition">
-        <ruby>単元一覧<rt>たんげんいちらん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>る
-    </a>
-</div>
+        <div class="space-y-3">
+            <button type="button" onclick="restartQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs md:text-sm flex items-center justify-center gap-2 transition shadow-md active:scale-95">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>もう<ruby>一度<rt>いちど</rt></ruby><ruby>挑戦<rt>ちょうせん</rt></ruby>する</span>
+            </button>
+            <a href="https://your-site.com/index.html" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl text-xs md:text-sm border border-slate-300 text-center transition">
+                <ruby>単元一覧<rt>たんげんいちらん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>る
+            </a>
+        </div>
+    </div>
 
     <!-- フッター -->
     <footer class="w-full text-center text-slate-400 text-[11px] py-2 mt-auto">
         介護福祉士国家試験対策 学習アプリ
     </footer>
 
+    <!-- JavaScript ロジック -->
     <script>
-        /*
-         * 問題データ（配列表式）
-         * この中に何問入っていても、プログラムが自動計算して順繰りに表示します。
-         */
         const questions = [
             {
                 id: 1,
@@ -199,7 +197,7 @@
                 choices: [
                     '<ruby>着替え<rt>きがえ</rt></ruby>の際、カーテンを閉めずにそのまま行う。',
                     '<ruby>利用者<rt>りようしゃ</rt></ruby>の<ruby>個人情報<rt>こじんじょうほう</rt></ruby>をSNSに<ruby>投稿<rt>とうこう</rt></ruby>する。',
-                    '<ruby>排泄<rt>はいせつ</rt></ruby><ruby>介助<rt>かいじょ</rt></ruby>の際、ドアやカーテンを閉めて<ruby>尊厳<rt>そんげん</rt></ruby;を守る。',
+                    '<ruby>排泄<rt>はいせつ</rt></ruby><ruby>介助<rt>かいじょ</rt></ruby>の際、ドアやカーテンを閉めて<ruby>尊厳<rt>そんげん</rt></ruby>を守る。',
                     '<ruby>他職員<rt>たしょくいん</rt></ruby>への申し送りノートを<ruby>誰<rt>だれ</rt></ruby>でも読める場所に放置する。',
                     '<ruby>利用者<rt>りようしゃ</rt></ruby>の<ruby>許可<rt>きょか</rt></ruby>なく<ruby>私物<rt>しぶつ</rt></ruby>をすべて処分する。'
                 ],
@@ -212,25 +210,20 @@
         let selectedOption = null;
         let score = 0;
 
-        // ページロード時の初期表示
         window.onload = function() {
             renderQuestion();
         };
 
-        // 問題の描画機能
         function renderQuestion() {
             const q = questions[currentQuestionIndex];
             selectedOption = null;
 
-            // ヘッダーやバッジの更新
             document.getElementById('progressBadge').innerText = `${currentQuestionIndex + 1} / ${questions.length} 問`;
             document.getElementById('questionNumBadge').innerHTML = `<i class="fa-solid fa-circle-question text-emerald-600"></i><span><ruby>問題<rt>もんだい</rt></ruby> ${currentQuestionIndex + 1}</span>`;
             document.getElementById('questionCountText').innerText = `${questions.length}問中 ${currentQuestionIndex + 1}問目`;
 
-            // 問題文セット
             document.getElementById('questionText').innerHTML = q.question;
 
-            // 選択肢ボタンの生成
             const container = document.getElementById('optionsContainer');
             container.innerHTML = '';
 
@@ -238,6 +231,7 @@
                 const num = index + 1;
                 const btn = document.createElement('button');
                 btn.id = `btn-${num}`;
+                btn.type = "button";
                 btn.onclick = () => selectOption(num);
                 btn.className = "option-btn w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-400 flex items-center justify-between group";
                 btn.innerHTML = `
@@ -250,16 +244,13 @@
                 container.appendChild(btn);
             });
 
-            // 解説ボックスを非表示にする
             document.getElementById('answerBox').classList.add('hidden');
         }
 
-        // 選択肢を選んだ時の処理
         function selectOption(selectedNum) {
             const q = questions[currentQuestionIndex];
             selectedOption = selectedNum;
 
-            // リセット
             for (let i = 1; i <= q.choices.length; i++) {
                 const btn = document.getElementById(`btn-${i}`);
                 const icon = document.getElementById(`icon-${i}`);
@@ -267,7 +258,6 @@
                 if (icon) icon.className = "fa-regular fa-circle text-slate-300 text-base flex-shrink-0";
             }
 
-            // 選択ボタンのスタイリング
             const selectedBtn = document.getElementById(`btn-${selectedNum}`);
             const selectedIcon = document.getElementById(`icon-${selectedNum}`);
 
@@ -279,11 +269,9 @@
                 selectedIcon.className = "fa-solid fa-circle-xmark text-red-500 text-lg flex-shrink-0";
             }
 
-            // 自動で解説を開く
             showAnswer();
         }
 
-        // 解説を表示する機能
         function showAnswer() {
             const q = questions[currentQuestionIndex];
             const answerBox = document.getElementById('answerBox');
@@ -294,7 +282,6 @@
             answerDescription.innerHTML = q.explanation;
             answerBox.classList.remove('hidden');
 
-            // 正解肢のハイライト強める
             const correctBtn = document.getElementById(`btn-${q.correct}`);
             const correctIcon = document.getElementById(`icon-${q.correct}`);
             if (correctBtn && !correctBtn.classList.contains("wrong-selected")) {
@@ -312,7 +299,6 @@
             }
         }
 
-        // 次の問題に進む処理
         function nextQuestion() {
             const q = questions[currentQuestionIndex];
             if (selectedOption === q.correct) {
@@ -328,7 +314,6 @@
             }
         }
 
-        // 全問題終了時の結果画面
         function showResults() {
             document.getElementById('quizCard').classList.add('hidden');
             document.getElementById('resultCard').classList.remove('hidden');
@@ -336,7 +321,6 @@
             document.getElementById('totalScoreText').innerText = questions.length;
         }
 
-        // もう一度やり直す処理
         function restartQuiz() {
             currentQuestionIndex = 0;
             score = 0;
