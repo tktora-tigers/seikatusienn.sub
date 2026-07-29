@@ -146,16 +146,15 @@
         </div>
 
         <!-- アクションボタン -->
-        <div class="space-y-3">
-            <button onclick="restartQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs md:text-sm flex items-center justify-center gap-2 transition shadow-md active:scale-95">
-                <i class="fa-solid fa-rotate-right"></i>
-                <span>もう<ruby>一度<rt>いちど</rt></ruby><ruby>挑戦<rt>ちょうせん</rt></ruby>する</span>
-            </button>
-            <a href="https://tktora-tigers.github.io/kaifuku-home/" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl text-xs md:text-sm border border-slate-300 transition">
-                <ruby>単元一覧<rt>たんげんいちらん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>る
-            </a>
-        </div>
-    </div>
+<div class="space-y-3">
+    <button onclick="restartQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs md:text-sm flex items-center justify-center gap-2 transition shadow-md active:scale-95">
+        <i class="fa-solid fa-rotate-right"></i>
+        <span>もう<ruby>一度<rt>いちど</rt></ruby><ruby>挑戦<rt>ちょうせん</rt></ruby>する</span>
+    </button>
+    <a href="https://tktora-tigers.github.io/kaifuku-home/" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 text-center rounded-2xl text-xs md:text-sm border border-slate-300 transition">
+        <ruby>単元一覧<rt>たんげんいちらん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>る
+    </a>
+</div>
 
     <!-- フッター -->
     <footer class="w-full text-center text-slate-400 text-[11px] py-2 mt-auto">
