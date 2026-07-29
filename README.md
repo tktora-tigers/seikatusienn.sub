@@ -63,7 +63,7 @@
 
     <!-- ヘッダー（戻るボタン ＆ 単元タイトル） -->
     <header class="w-full max-w-md md:max-w-2xl bg-white rounded-2xl p-4 mb-4 card-shadow border border-slate-200 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition">
+        <a href="https://tktora-tigers.github.io/kaifuku-home/" class="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition">
             <i class="fa-solid fa-chevron-left"></i>
             <span><ruby>一覧<rt>いちらん</rt></ruby>へ</span>
         </a>
