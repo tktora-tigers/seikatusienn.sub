@@ -150,8 +150,7 @@
             <button onclick="restartQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs md:text-sm flex items-center justify-center gap-2 transition shadow-md active:scale-95">
                 <i class="fa-solid fa-rotate-right"></i>
                 <span>もう<ruby>一度<rt>いちど</rt></ruby><ruby>挑戦<rt>ちょうせん</rt></ruby>する</span>
-        </div>
-    </div>
+      </div>
 
     <!-- フッター -->
     <footer class="w-full text-center text-slate-400 text-[11px] py-2 mt-auto">
